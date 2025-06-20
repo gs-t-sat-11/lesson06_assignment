@@ -1,0 +1,116 @@
+.container {
+  padding: 16px 24px;
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px;
+  transition: border-color 0.2s;
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--primary-color);
+}
+
+.textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 4px 8px;
+  min-height: 24px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sendButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.sendButton:hover:not(:disabled) {
+  background-color: #0052a3;
+  transform: scale(1.05);
+}
+
+.sendButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.sendButton:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  padding-left: 12px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px 16px;
+  }
+
+  .inputWrapper {
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .textarea {
+    font-size: 16px; /* iOSでのズーム防止 */
+    padding: 6px 8px;
+  }
+
+  .sendButton {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 12px;
+  }
+
+  .inputWrapper {
+    padding: 4px;
+  }
+
+  .textarea {
+    padding: 6px;
+  }
+
+  .hint {
+    font-size: 11px;
+    padding-left: 8px;
+  }
+}

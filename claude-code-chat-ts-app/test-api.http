@@ -1,0 +1,63 @@
+### APIテスト用HTTPファイル
+### VSCode REST Client拡張機能で使用可能
+
+@baseUrl = http://localhost:3000/api
+
+### 1. 新規チャットの開始
+POST {{baseUrl}}/chat/start
+Content-Type: application/json
+
+{
+  "prompt": "こんにちは！簡単な挨拶をお願いします。",
+  "options": {
+    "maxTurns": 1,
+    "outputFormat": "stream-json"
+  }
+}
+
+### 2. 全セッション一覧の取得
+GET {{baseUrl}}/chat/sessions
+
+### 3. 特定のセッション情報の取得
+# session-idを実際のIDに置き換えてください
+GET {{baseUrl}}/chat/sessions/your-session-id-here
+
+### 4. 会話の継続
+POST {{baseUrl}}/chat/continue
+Content-Type: application/json
+
+{
+  "sessionId": "your-session-id-here",
+  "prompt": "もっと詳しく教えてください。",
+  "options": {
+    "maxTurns": 1
+  }
+}
+
+### 5. セッションの中断
+DELETE {{baseUrl}}/chat/sessions/your-session-id-here/abort
+
+### 6. 複数ターンのテスト
+POST {{baseUrl}}/chat/start
+Content-Type: application/json
+
+{
+  "prompt": "TypeScriptでFibonacci数列を計算する関数を書いてください。",
+  "options": {
+    "maxTurns": 3,
+    "systemPrompt": "あなたは親切なプログラミングアシスタントです。"
+  }
+}
+
+### 7. ツール制限のテスト
+POST {{baseUrl}}/chat/start
+Content-Type: application/json
+
+{
+  "prompt": "現在の日付と時刻を教えてください。",
+  "options": {
+    "maxTurns": 1,
+    "allowedTools": ["Read", "Write"],
+    "disallowedTools": ["Bash"]
+  }
+}

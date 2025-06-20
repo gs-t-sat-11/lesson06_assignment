@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Small size - モバイルヘッダー用 */
+.container.small {
+  gap: 0;
+}
+
+.container.small .image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  background-color: var(--surface-color);
+}
+
+/* Large size - サイドバー用 */
+.container.large {
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+}
+
+.container.large .image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-color);
+  background-color: var(--surface-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  width: 100%;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.style {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* タブレット以上では大きくする */
+@media (min-width: 769px) {
+  .container.large .image {
+    width: 120px;
+    height: 120px;
+  }
+}

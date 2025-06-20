@@ -9,8 +9,9 @@ Claude Code SDK と にじボイス API を使った音声付き AI コーディ
 
 ## ③ アプリのデプロイ URL
 
-動画を提出します。音声を ON でご確認ください。
-https://drive.google.com/file/d/1Fty5cnHECwMTWpThH-zrD6dpPlKZhJ70/view?usp=sharing
+- 動画を提出します。
+- 音声を ON でご確認ください。
+- https://drive.google.com/file/d/1Fty5cnHECwMTWpThH-zrD6dpPlKZhJ70/view?usp=sharing
 
 ## ④ アプリのログイン用 ID または Password（ある場合）
 
